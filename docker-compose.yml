@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  navy-doc-formatter:
+    container_name: navy-doc-formatter
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - "5070:5070"
+    volumes:
+      - ./app/uploads:/app/uploads
+    restart: unless-stopped
